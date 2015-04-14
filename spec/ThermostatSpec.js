@@ -58,4 +58,10 @@ describe('Thermostat', function() {
     expect(thermostat.colour).toEqual('Red');
   });
 
+  it('can colour the display yellow when temperature is between 18 and 25', function(){
+    thermostat.temperature = 21;
+    thermostat.colours();
+    expect(thermostat.colour).toEqual('Yellow');
+  });
+
 });
