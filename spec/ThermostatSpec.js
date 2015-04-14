@@ -64,4 +64,11 @@ describe('Thermostat', function() {
     expect(thermostat.colour).toEqual('Yellow');
   });
 
+  it('can switch colours when temperature is increased', function() {
+    thermostat.temperature = 17;
+    thermostat.colours();
+    thermostat.up();
+    expect(thermostat.colour).toEqual('Yellow');
+  });
+
 });
