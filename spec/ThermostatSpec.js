@@ -25,9 +25,14 @@ describe('Thermostat', function() {
   });
 
   it('has a maximum temperature of 25 when powersaving mode is on', function() {
-    thermostat.temperature = 24;
+    thermostat.temperature = 25;
     thermostat.powersaving = true;
     expect( function(){ thermostat.up(); } ).toThrow(new Error("25 is max when powersaving is on"));
+  });
+
+  it('has a default max temp of 32', function() {
+    thermostat.temperature = 32;
+    expect( function(){ thermostat.up(); } ).toThrow(new Error("Temperature cannot exceed 32"))
   });
 
 });
