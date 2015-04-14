@@ -21,7 +21,7 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(19);
   });
 
-  it('has a minumum temperature of 10', function() {
+  it('has a miniumum temperature of 10', function() {
     thermostat.temperature = 10;
     expect( function(){ thermostat.down(); } ).toThrow(new Error("10 is the minimum temperature"));
   });
@@ -92,6 +92,15 @@ describe('Thermostat', function() {
       $("input#down").click();
       $("input#reset").click();
       expect('#temperature').toContainText('20');
+    });
+
+    it('can display whether powersaving is on', function(){
+      expect('#temperature').toContainText('true');
+    });
+
+    it('can change powersaving from on to off', function(){
+      $('input#powersaving').click();
+      expect('#temperature').toContainText('false');
     });
 
   });
