@@ -3,6 +3,8 @@ describe('Thermostat', function() {
   var thermostat;
   beforeEach(function() {
     thermostat = new Thermostat();
+    jasmine.getFixtures().fixturesPath = '.';
+    loadFixtures('index.html');
   });
 
   it('should have a starting temperature of 20', function() {
@@ -69,6 +71,16 @@ describe('Thermostat', function() {
     thermostat.colours();
     thermostat.up();
     expect(thermostat.colour).toEqual('Yellow');
+  });
+
+  describe('', function() {
+    it('displays a default temperature of 20', function() {
+    expect('#temperature').toContainText('20');
+  });
+    it('increases temp with an up button', function() {
+      $("input#up").click();
+      expect('#temperature').toContainText('21');
+    });
   });
 
 });
