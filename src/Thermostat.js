@@ -2,6 +2,7 @@ var Thermostat = function(){
 
   this.temperature = 20;
   this.powersaving = true;
+  this.colour = 'yellow';
 
 };
 
@@ -18,4 +19,8 @@ Thermostat.prototype.down = function() {
 
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
+};
+
+Thermostat.prototype.colours = function() {
+  if (this.temperature < 18) this.colour = 'Green';
 };
