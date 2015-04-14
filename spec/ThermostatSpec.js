@@ -73,14 +73,16 @@ describe('Thermostat', function() {
     expect(thermostat.colour).toEqual('Yellow');
   });
 
-  describe('', function() {
+  describe('web interface', function() {
     it('displays a default temperature of 20', function() {
-    expect('#temperature').toContainText('20');
-  });
+      expect('#temperature').toContainText('20');
+    });
+
     it('increases temp with an up button', function() {
       $("input#up").click();
       expect('#temperature').toContainText('21');
     });
+
   });
 
 });
