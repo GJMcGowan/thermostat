@@ -37,13 +37,18 @@ describe('Thermostat', function() {
   });
 
   it('has powersaving on by default', function(){
-    expect(thermostat.powersaving).toBe(true)
+    expect(thermostat.powersaving).toBe(true);
   });
 
   it('can reset the temp to 20 via reset button', function() {
     thermostat.temperature = 12;
-    thermostat.reset;
-    expect(thermostat.temperature).toBe(20);
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+  it('can color the display green when temperature < 18', function() {
+    thermostat.temperature = 17;
+    expect(thermostat.colour).toEqual('Green');
   });
 
 });
