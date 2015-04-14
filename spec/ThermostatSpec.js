@@ -35,4 +35,8 @@ describe('Thermostat', function() {
     expect( function(){ thermostat.up(); } ).toThrow(new Error("Temperature cannot exceed 32"))
   });
 
+  it('has powersaving on by default', function(){
+    expect(thermostat.powersaving).toBe(true)
+  });
+
 });
