@@ -83,6 +83,11 @@ describe('Thermostat', function() {
       expect('#temperature').toContainText('21');
     });
 
+    it('decreases temp with a down button', function() {
+      $("input#down").click();
+      expect('#temperature').toContainText('19');
+    });
+
   });
 
 });
