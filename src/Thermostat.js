@@ -6,12 +6,6 @@ var Thermostat = function(){
 
 };
 
-$('input#up').click(function(){
-  alert("Hey");
-  // this.up()
-  // $('#temp').text(parseInt($('#temp').text()) + 1);
-});
-
 Thermostat.prototype.up = function() {
   if (this.temperature === 25 && this.powersaving) { 
     throw new Error("25 is max when powersaving is on");

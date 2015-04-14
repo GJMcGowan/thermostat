@@ -1,24 +1,9 @@
 <script src='lib/jquery-2.1.3.js'></script>
 <script src='src/Thermostat.js'></script>
 
-<script>
-  var thermostat = new Thermostat();
-</script>
-
 <section id="temperature">
   <h2 id='temp'></h2>
   <input id='up' type='button' value='&#8593;'>
   <input id='down' type='button' value='&#8595;'>
 </section>
-
-<script>
-  document.getElementById('temp').innerHTML = thermostat.temperature;
-</script>
-
-<script>
-$( "input#up" ).click(function() {
-  thermostat.up()
-  document.getElementById('temp').innerHTML = thermostat.temperature;
-//   $( this ).slideUp();
-  });
-</script>
+<script src="src/Helpers.js"></script>

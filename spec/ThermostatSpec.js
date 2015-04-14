@@ -88,6 +88,12 @@ describe('Thermostat', function() {
       expect('#temperature').toContainText('19');
     });
 
+    it('sets temperature to 20 when reset is hit', function() {
+      $("input#down").click();
+      $("input#reset").click();
+      expect('#temperature').toContainText('20');
+    });
+
   });
 
 });
