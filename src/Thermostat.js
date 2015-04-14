@@ -5,9 +5,10 @@ var Thermostat = function(){
 };
 
 Thermostat.prototype.up = function() {
-  this.temperature ++
+  this.temperature ++;
 };
 
 Thermostat.prototype.down = function() {
-  this.temperature --
+  if (this.temperature === 10) throw new Error("10 is the minimum temperature");
+  this.temperature --;
 };

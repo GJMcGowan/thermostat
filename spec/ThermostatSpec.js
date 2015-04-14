@@ -21,8 +21,13 @@ describe('Thermostat', function() {
 
   it('has a minumum temperature of 10', function() {
     thermostat.temperature = 10;
-    thermostat.down();
-    expect(thermostat.temperature).toEqual(10);
+    expect( function(){ thermostat.down(); } ).toThrow(new Error("10 is the minimum temperature"));
+  });
+
+  it('has a maximum temperature of 25 when powersaving mode is on', function() {
+    thermostat.temperature = 24;
+    thermostat.powersaving = true;
+    expect( function(){ thermostat.up(); } ).toThrow(new Error("25 is max when powersaving is on"));
   });
 
 });
